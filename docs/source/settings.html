@@ -30,6 +30,10 @@
   <li><a href="../api.html">Index</a></li>
 </ul>
 
+<h2>Contents</h2>
+<ul>
+<li><a href="#Settings">Settings</a></li>
+</ul>
 
 
 <h2>Source</h2>
@@ -56,18 +60,279 @@
 </p>
 
 
+<h2><a href="#Settings">Settings</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#s_protect.claim_size">s_protect.claim_size</a></td>
+	<td class="summary">Width and length of claims in nodes.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.claim_height">s_protect.claim_height</a></td>
+	<td class="summary">Height of claims in nodes.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.start_underground">s_protect.start_underground</a></td>
+	<td class="summary">Defines the Y offset where the 0th claim should start in the underground.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.underground_limit">s_protect.underground_limit</a></td>
+	<td class="summary">Only allows claiming above this Y value.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.claim_return">s_protect.claim_return</a></td>
+	<td class="summary">Returns the claim stick when unclaiming the area.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.claim_to_dig">s_protect.claim_to_dig</a></td>
+	<td class="summary">Players will need to claim the area (or have access to it) to dig.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.area_list">s_protect.area_list</a></td>
+	<td class="summary">Allows players to list their areas using '/area list'.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.max_claims">s_protect.max_claims</a></td>
+	<td class="summary">Limits the amount of claims per player.</td>
+	</tr>
+</table>
 
 <br/>
 <br/>
 
 
+    <h2 class="section-header "><a name="Settings"></a>Settings</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "s_protect.claim_size"></a>
+    <strong>s_protect.claim_size</strong>
+    </dt>
+    <dd>
+    Width and length of claims in nodes. </p>
+
+<p> !! Distorts the claim locations along the X and Z axis !!
+
+    </ul>
+    <h3>Type:</h3>
+    <ul>
+         <i>Integer, positive, even number</i>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Default Value:</h3>
+    <ul>
+         <i>16</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.claim_height"></a>
+    <strong>s_protect.claim_height</strong>
+    </dt>
+    <dd>
+    Height of claims in nodes. </p>
+
+<p> !! Distorts the claim locations along the Y axis !!
+
+    </ul>
+    <h3>Type:</h3>
+    <ul>
+         <i>Integer, positive</i>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Default Value:</h3>
+    <ul>
+         <i>150</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.start_underground"></a>
+    <strong>s_protect.start_underground</strong>
+    </dt>
+    <dd>
+    Defines the Y offset where the 0th claim should start in the underground. </p>
+
+<p> Example of claim (0,0,0): Ymin = -(50) = -50, Ymax = 150 - (50) - 1 = 99
+
+    </ul>
+    <h3>Type:</h3>
+    <ul>
+         <i>Integer</i>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Default Value:</h3>
+    <ul>
+         <i>50</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.underground_limit"></a>
+    <strong>s_protect.underground_limit</strong>
+    </dt>
+    <dd>
+    Only allows claiming above this Y value. </p>
+
+<p> To disable this limit, set the value to 'nil'
+
+    </ul>
+    <h3>Type:</h3>
+    <ul>
+         <i>Integer or nil</i>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Default Value:</h3>
+    <ul>
+         <i>-300</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.claim_return"></a>
+    <strong>s_protect.claim_return</strong>
+    </dt>
+    <dd>
+    Returns the claim stick when unclaiming the area.
+
+    </ul>
+    <h3>Type:</h3>
+    <ul>
+         <i>Boolean</i>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Default Value:</h3>
+    <ul>
+         <i>true</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.claim_to_dig"></a>
+    <strong>s_protect.claim_to_dig</strong>
+    </dt>
+    <dd>
+    Players will need to claim the area (or have access to it) to dig. </p>
+
+<p> Digging will be still allowed in the underground,
+   as defined by the setting 's<em>protect.underground</em>limit'
+
+    </ul>
+    <h3>Type:</h3>
+    <ul>
+         <i>Boolean</i>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Default Value:</h3>
+    <ul>
+         <i>false</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.area_list"></a>
+    <strong>s_protect.area_list</strong>
+    </dt>
+    <dd>
+    Allows players to list their areas using '/area list'.
+
+    </ul>
+    <h3>Type:</h3>
+    <ul>
+         <i>Boolean</i>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Default Value:</h3>
+    <ul>
+         <i>true</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.max_claims"></a>
+    <strong>s_protect.max_claims</strong>
+    </dt>
+    <dd>
+    Limits the amount of claims per player. </p>
+
+<p> For values &lt; 10: Stop this nonsense
+ Doubled limit for players with the 'simple_protection' privilege
+
+    </ul>
+    <h3>Type:</h3>
+    <ul>
+         <i>Integer</i>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Default Value:</h3>
+    <ul>
+         <i>200</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
 
 
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/AntumDeluge/LDoc/tree/antum">LDoc 1.4.6-antum-dev</a></i>
-<i style="float:right;">Last updated 2018-07-26 11:19:06 </i>
+<i style="float:right;">Last updated 2018-07-26 14:34:25 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
