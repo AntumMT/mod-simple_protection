@@ -1,14 +1,7 @@
 
--- *** chest.lua ***
-
---- Chest
---
--- @file chest.lua
-
-
 --- Functions
 --
--- @section functions
+-- @file functions
 
 
 --- Function to get item count.
@@ -19,124 +12,6 @@
 -- @param player
 -- @param count
 -- @return Item count
-
-
---- Nodes
---
--- @section nodes
-
-
---- A sharable protected chest.
---
--- A shared chest for <i>**simple_protection**</i> but works with other protection mods too.
---
--- @node simple_protection:chest
--- @recipe 1,shapeless
--- 		{"simple_protection:claim", "default:chest_locked"}
--- @recipe 1,shapeless
--- 		{"simple_protection:claim", "default:chest"}
-
-
--- *** command_mgr.lua ***
-
---- Command Manager
---
--- @file command_mgr.lua
-
---- Chat Commands
---
--- @section chatcmd
-
---- Area command
---
--- @chatcmd	area
--- @rcparam	r1
--- @cparam	optional
--- @rcparam	required
-
-
--- *** database_lsqlite.lua ***
-
---- lSQLite database functions
---
--- load_db()
--- save_share_db()
--- get_claim(<pos or index)
--- get_player_claims(player name)
--- update_claims(claims table)
---
--- @file database_raw.lua
-
-
--- *** database_raw.lua ***
-
---- Raw text format database functions
---
--- load_db()
--- save_share_db()
--- get_claim(<pos or index>, direct access)
--- set_claim(data, index)
--- get_player_claims(player name)
--- update_claims(claims table)
---
--- minetest.safe_file_write compatibility code
---
--- @file database_raw.lua
-
-
--- *** default_settings.lua ***
-
---- Default Settings
---
--- simple_protection/default_settings.lua
---		Contains the default settings for freshly created worlds.
---		Please do not modify in order to not get any configuration-related errors
---		after updating all other files but this
---
--- [world_path]/s_protect.conf
---		Contains the per-world specific settings.
---		You may modify this one but pay attention, as some settings may cause
---		unwanted side effects when claims were made.
---
--- @file default_settings.lua
-
-
--- *** hud.lua ***
-
---- HUD functions
---
--- areas HUD overlay compatibility
--- HUD display and refreshing
---
--- @file hud.lua
-
-
--- *** init.lua ***
-
---- Initialization Script
---
--- Initialisations
--- Module loading
--- Glue
---
--- @file init.lua
-
-
--- *** misc_functions.lua ***
-
---- Misc. Functions
---
--- Table helper functions
--- Protection helper functions
--- Configuration loading
---
--- @file misc_functions.lua
-
-
---- Table Helper Functions
---
--- @section	table_helper
-
 
 --- Checks table for an item.
 --
@@ -149,12 +24,6 @@
 -- @function table_erase
 -- @param t Table definition
 -- @param e Item to be removed
-
-
---- Protection Helper Functions
---
--- @section	protect helper
-
 
 --- Allows authorized users & mods to modify an area.
 --
@@ -177,31 +46,50 @@
 -- @function s_protect.get_center
 -- @param pos1 Coordinates from which to identify protected area
 
-
---- Configuration Loading
---
--- @section config
-
-
 --- Loads configurations from file.
 --
 -- @function s_protect.load_config
 
 
--- *** protection.lua ***
+--- Nodes
+--
+-- @file nodes
 
---- Protection
+
+--- A sharable protected chest.
 --
--- Protection callback handler
--- Node placement checks
--- Claim Stick item definition
+-- A shared chest for <i>**simple_protection**</i> but works with other protection mods too.
 --
--- @file protection.lua
+-- @node simple_protection:chest
+-- @recipe 1,shapeless
+-- 		{"simple_protection:claim", "default:chest_locked"}
+-- @recipe 1,shapeless
+-- 		{"simple_protection:claim", "default:chest"}
+
+
+--- Chat Commands
+--
+-- @file chat_commands
+
+
+--- Area command
+--
+-- @chatcmd	area
+-- @cparam param Can be one of the following:
+--   "show",
+--   "radar",
+--   "(un)share &lt;name&gt;",
+--   "(un)shareall &lt;name&gt;"
+
+
+--- Settings
+--
+-- @file settings
 
 
 --- Items
 --
--- @section items
+-- @file items
 
 
 --- Claim Stick.
@@ -214,10 +102,3 @@
 -- 		{"default:copper_ingot", "default:steel_ingot", "default:copper_ingot"},
 --		{"default:steel_ingot", "default:stonebrick", "default:steel_ingot"},
 --		{"default:copper_ingot", "default:steel_ingot", "default:copper_ingot"},
-
-
--- *** radar.lua ***
-
---- Radar
---
--- @file radar.lua
