@@ -87,6 +87,68 @@
 -- @file settings
 
 
+--- Width and length of claims in nodes.
+--
+-- !! Distorts the claim locations along the X and Z axis !!
+--
+-- @setting s_protect.claim_size
+-- @settype Integer, positive, even number
+-- @default 16
+
+--- Height of claims in nodes.
+--
+-- !! Distorts the claim locations along the Y axis !!
+--
+-- @setting s_protect.claim_height
+-- @settype Integer, positive
+-- @default 150
+
+--- Defines the Y offset where the 0th claim should start in the underground.
+--
+-- Example of claim (0,0,0): Ymin = -(50) = -50, Ymax = 150 - (50) - 1 = 99
+--
+-- @setting s_protect.start_underground
+-- @settype Integer
+-- @default 50
+
+--- Only allows claiming above this Y value.
+--
+-- To disable this limit, set the value to 'nil'
+--
+-- @setting s_protect.underground_limit
+-- @settype Integer or nil
+-- @default -300
+
+--- Returns the claim stick when unclaiming the area.
+--
+-- @setting s_protect.claim_return
+-- @settype Boolean
+-- @default true
+
+--- Players will need to claim the area (or have access to it) to dig.
+--
+-- Digging will be still allowed in the underground,
+--   as defined by the setting 's_protect.underground_limit'
+--
+-- @setting s_protect.claim_to_dig
+-- @settype Boolean
+-- @default false
+
+--- Allows players to list their areas using '/area list'.
+--
+-- @setting s_protect.area_list
+-- @settype Boolean
+-- @default true
+
+--- Limits the amount of claims per player.
+--
+-- For values < 10: Stop this nonsense
+-- Doubled limit for players with the 'simple_protection' privilege
+--
+-- @setting s_protect.max_claims
+-- @settype Integer
+-- @default 200
+
 --- Items
 --
 -- @file items
