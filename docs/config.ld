@@ -85,6 +85,11 @@ local function recipe_handler(value)
 	return output
 end
 
+--- Handles "settype" tag.
+local function settype_handler(value)
+	return '<i>' .. value '</i>'
+end
+
 --- Retrieves an image to display.
 --
 -- @function get_image
@@ -153,6 +158,7 @@ end
 
 -- Custom types
 new_type('chatcmd', 'Chat Commands', false, 'param')
+new_type('setting', 'Settings', false)
 new_type('item', 'Items', false)
 new_type('priv', 'Privileges', false)
 new_type('node', 'Nodes', false)
@@ -170,6 +176,11 @@ custom_tags = {
 		title = 'Parameters',
 		format = cparam_handler,
 	},
+	-- Settings type
+	{'settype',
+		title = 'Type',
+		format = settype_handler,
+	}
 	-- Item preview images
 	{'img',
 		title = 'Image',
