@@ -67,7 +67,8 @@ end
 -- @param name Base filename for image
 -- @return An HTML image source
 local function getImage(name)
-	local texture = '<img src="../../textures/' .. name .. '.png" style="width:32px;height:32px;" />'
+	--local texture = '<img src="../../textures/' .. name .. '.png" style="width:32px;height:32px;" />'
+	local texture = '<img src="https://raw.githubusercontent.com/AntumMT/mod-simple_protection/gh-pages/textures/' .. name .. '.png" style="width:32px;height:32px;" />'
 	return texture
 end
 
