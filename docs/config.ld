@@ -85,9 +85,9 @@ local function recipe_handler(value)
 	return output
 end
 
---- Handles "settype" tag.
-local function settype_handler(value)
-	return '<i>' .. value '</i>'
+--- Changes text style to italic.
+local function to_italic(value)
+	return '<i>' .. value .. '</i>'
 end
 
 --- Retrieves an image to display.
@@ -179,8 +179,8 @@ custom_tags = {
 	-- Settings type
 	{'settype',
 		title = 'Type',
-		format = settype_handler,
-	}
+		format = to_italic,
+	},
 	-- Item preview images
 	{'img',
 		title = 'Image',
@@ -193,6 +193,10 @@ custom_tags = {
 	{'recipe',
 		title = 'Craft Recipes',
 		format = recipe_handler,
+	},
+	{'default',
+		title = 'Default Value',
+		format = to_italic,
 	},
 }
 
