@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Simple Protection mod for Minetest</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Simple Protection</h1>
+
+<ul>
+  <li><a href="../api.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Table_Helper_Functions">Table Helper Functions </a></li>
+<li><a href="#Protection_Helper_Functions">Protection Helper Functions </a></li>
+<li><a href="#Configuration_Loading">Configuration Loading </a></li>
+</ul>
+
+
+<h2>Source</h2>
+<ul class="nowrap">
+  <li><a href="../source/chest.lua.html">chest.lua</a></li>
+  <li><a href="../source/command_mgr.lua.html">command_mgr.lua</a></li>
+  <li><a href="../source/database_raw.lua.html">database_raw.lua</a></li>
+  <li><a href="../source/database_raw.lua.html">database_raw.lua</a></li>
+  <li><a href="../source/default_settings.lua.html">default_settings.lua</a></li>
+  <li><a href="../source/hud.lua.html">hud.lua</a></li>
+  <li><a href="../source/init.lua.html">init.lua</a></li>
+  <li><strong>misc_functions.lua</strong></li>
+  <li><a href="../source/protection.lua.html">protection.lua</a></li>
+  <li><a href="../source/radar.lua.html">radar.lua</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/readme.md.html">readme</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>File <code>misc_functions.lua</code></h1>
+<p>Misc.</p>
+<p> Functions</p>
+
+<p> Table helper functions
+ Protection helper functions
+ Configuration loading</p>
+
+
+<h2><a href="#Table_Helper_Functions">Table Helper Functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#table_contains">table_contains (t, e)</a></td>
+	<td class="summary">Checks table for an item.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#table_erase">table_erase (t, e)</a></td>
+	<td class="summary">Removes an item from table.</td>
+	</tr>
+</table>
+<h2><a href="#Protection_Helper_Functions">Protection Helper Functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#s_protect.can_access">s_protect.can_access (pos, player_name)</a></td>
+	<td class="summary">Allows authorized users &amp; mods to modify an area.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.get_location">s_protect.get_location (pos_)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.get_area_bounds">s_protect.get_area_bounds (pos_)</a></td>
+	<td class="summary">Retrieves protected area boundaries.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#s_protect.get_center">s_protect.get_center (pos1)</a></td>
+	<td class="summary">Retrieves center coordinates of protected area.</td>
+	</tr>
+</table>
+<h2><a href="#Configuration_Loading">Configuration Loading </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#s_protect.load_config">s_protect.load_config ()</a></td>
+	<td class="summary">Loads configurations from file.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Table_Helper_Functions"></a>Table Helper Functions </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "table_contains"></a>
+    <strong>table_contains (t, e)</strong>
+    </dt>
+    <dd>
+    Checks table for an item.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+         Table definition
+        </li>
+        <li><span class="parameter">e</span>
+         Item to check for
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "table_erase"></a>
+    <strong>table_erase (t, e)</strong>
+    </dt>
+    <dd>
+    Removes an item from table.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+         Table definition
+        </li>
+        <li><span class="parameter">e</span>
+         Item to be removed
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Protection_Helper_Functions"></a>Protection Helper Functions </h2>
+
+          <div class="section-description">
+           helper
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "s_protect.can_access"></a>
+    <strong>s_protect.can_access (pos, player_name)</strong>
+    </dt>
+    <dd>
+    Allows authorized users &amp; mods to modify an area.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pos</span>
+         Coordinates of node to check access rights
+        </li>
+        <li><span class="parameter">player_name</span>
+         Player to check for access rights
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.get_location"></a>
+    <strong>s_protect.get_location (pos_)</strong>
+    </dt>
+    <dd>
+
+
+
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pos_</span>
+         (description)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.get_area_bounds"></a>
+    <strong>s_protect.get_area_bounds (pos_)</strong>
+    </dt>
+    <dd>
+    Retrieves protected area boundaries.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pos_</span>
+         Coordinates from which to identify protected area
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "s_protect.get_center"></a>
+    <strong>s_protect.get_center (pos1)</strong>
+    </dt>
+    <dd>
+    Retrieves center coordinates of protected area.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pos1</span>
+         Coordinates from which to identify protected area
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Configuration_Loading"></a>Configuration Loading </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "s_protect.load_config"></a>
+    <strong>s_protect.load_config ()</strong>
+    </dt>
+    <dd>
+    Loads configurations from file.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/AntumDeluge/LDoc/tree/antum">LDoc 1.4.6-antum-dev</a></i>
+<i style="float:right;">Last updated 2018-07-25 23:41:29 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
