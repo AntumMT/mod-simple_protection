@@ -11,7 +11,7 @@ output = 'api'
 readme = 'README.md'
 dir = 'docs'
 file = {
-	'docs/api.ldoc',
+	dir .. '/api.ldoc',
 }
 
 
