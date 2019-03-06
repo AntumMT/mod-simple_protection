@@ -9,6 +9,7 @@ not_luadoc = true
 wrap = true
 output = 'api'
 readme = 'README.md'
+dir = 'docs'
 file = {
 	'docs/api.ldoc',
 }

@@ -27,7 +27,7 @@ rm -rf "${TARGET}.html" "${DOCS}/scripts" "${DOCS}/source" "${DOCS}/modules" "${
 if [ "${PARAM}" != "clean" ]; then
 	# Create new files
 	echo -e "\nGenerating new documentation ..."
-	ldoc -c "${CONFIG}" -d "${DOCS}" "${TARGET}.ldoc"
+	ldoc -c "${CONFIG}" "${TARGET}.ldoc"
 
 	echo -e "\nMaking some final adjustments ..."
 
