@@ -22,7 +22,7 @@ cd "${ROOT}"
 
 # Clean old files
 echo -e "\nCleaning old files ..."
-rm -rf "${TARGET}.html" "${DOCS}/scripts" "${DOCS}/source" "${DOCS}/modules" "${DOCS}/topics" "${DOCS}/ldoc.css"
+rm -rf "${TARGET}.html" "${DOCS}/scripts" "${DOCS}/source" "${DOCS}/modules" "${DOCS}/topics" "${DOCS}/ldoc.css" "${DOCS}/data"
 
 if [ "${PARAM}" != "clean" ]; then
 	# Create new files
@@ -36,9 +36,6 @@ if [ "${PARAM}" != "clean" ]; then
 		sed -i -e 's|>prefix:name|>\&lt;prefix\&gt;:\&lt;name\&gt;|' "${TARGET}.html"
 	fi
 
-	# Add icon to main page
-	sed -i -e 's|<h1>Simple Protection</h1>|<h1>Simple Protection</h1>\n<img src="icon.png" />|' "${TARGET}.html"
-
 	# Rename section "Source" to "Category"
 	for F in $(find "${DOCS}" -type f -name "*.html"); do
 		sed -i -e 's|<h2>Source</h2>|<h2>Category</h2>|' "${F}"
@@ -46,14 +43,6 @@ if [ "${PARAM}" != "clean" ]; then
 
 	for F in $(find "${DOCS}/source" -type f -name "*.html"); do
 		sed -i -e 's|<h1>File |<h1>Category |' "${F}"
-
-		# Add icon to sub-pages
-		sed -i -e 's|<h1>Simple Protection</h1>|<h1>Simple Protection</h1>\n<img src="../icon.png" />|' "${F}"
-	done
-
-	for F in $(find "${DOCS}/topics" -type f -name "*.html"); do
-		# Add icon to sub-pages
-		sed -i -e 's|<h1>Simple Protection</h1>|<h1>Simple Protection</h1>\n<img src="../icon.png" />|' "${F}"
 	done
 fi
 

@@ -10,6 +10,7 @@ wrap = true
 output = 'api'
 readme = 'README.md'
 dir = 'docs'
+icon = 'icon.png'
 file = {
 	dir .. '/api.ldoc',
 }
