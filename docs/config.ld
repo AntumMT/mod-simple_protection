@@ -9,6 +9,9 @@ not_luadoc = true
 wrap = true
 output = 'api'
 readme = 'README.md'
+file = {
+	'docs/api.ldoc',
+}
 
 
 -- Imported modules
