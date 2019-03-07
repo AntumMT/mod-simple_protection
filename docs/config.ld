@@ -6,6 +6,7 @@ description = "Mod that allows players to claim & protect areas."
 format = 'markdown'
 add_language_extension('ldoc', 'lua')
 not_luadoc = true
+style = '!fixed'
 wrap = true
 output = 'api'
 readme = 'README.md'
