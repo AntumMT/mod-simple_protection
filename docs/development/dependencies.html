@@ -34,28 +34,28 @@
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Nodes">Nodes</a></li>
+<li><a href="#Dependencies">Dependencies</a></li>
 </ul>
 
 
-<h2>Client</h2>
-<ul class="nowrap">
-  <li><a href="../client/chat_commands.html">chat_commands</a></li>
-  <li><a href="../client/items.html">items</a></li>
-  <li><strong>nodes</strong></li>
-  <li><a href="../client/privileges.html">privileges</a></li>
-</ul>
 <h2>Development</h2>
 <ul class="nowrap">
   <li><a href="../development/command_mgr.lua.html">command_mgr.lua</a></li>
   <li><a href="../development/database_lsqlite.lua.html">database_lsqlite.lua</a></li>
   <li><a href="../development/database_raw.lua.html">database_raw.lua</a></li>
   <li><a href="../development/default_settings.lua.html">default_settings.lua</a></li>
-  <li><a href="../development/dependencies.html">dependencies</a></li>
+  <li><strong>dependencies</strong></li>
   <li><a href="../development/hud.lua.html">hud.lua</a></li>
   <li><a href="../development/init.lua.html">init.lua</a></li>
   <li><a href="../development/misc_functions.lua.html">misc_functions.lua</a></li>
   <li><a href="../development/protection.lua.html">protection.lua</a></li>
+</ul>
+<h2>Client</h2>
+<ul class="nowrap">
+  <li><a href="../client/chat_commands.html">chat_commands</a></li>
+  <li><a href="../client/items.html">items</a></li>
+  <li><a href="../client/nodes.html">nodes</a></li>
+  <li><a href="../client/privileges.html">privileges</a></li>
 </ul>
 <h2>Topics</h2>
 <ul class="">
@@ -66,18 +66,26 @@
 
 <div id="content">
 
-<h1>Client <code>nodes</code></h1>
-<p>Nodes</p>
+<h1>Dev <code>dependencies</code></h1>
+<p>Simple Protection requires to following mods to work correctly.</p>
 <p>
 
 </p>
 
 
-<h2><a href="#Nodes">Nodes</a></h2>
+<h2><a href="#Dependencies">Dependencies</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#simple_protection:chest">simple_protection:chest</a></td>
-	<td class="summary">A sharable protected chest.</td>
+	<td class="name" ><a href="#default">default</a></td>
+	<td class="summary">Base mod for many games.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#intllib">intllib (<i>optional</i>)</a></td>
+	<td class="summary">Internationalization library.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#areas">areas (<i>optional</i>)</a></td>
+	<td class="summary">Advanced area protection.</td>
 	</tr>
 </table>
 
@@ -85,28 +93,75 @@
 <br/>
 
 
-    <h2 class="section-header "><a name="Nodes"></a>Nodes</h2>
+    <h2 class="section-header "><a name="Dependencies"></a>Dependencies</h2>
 
     <dl class="function">
     <dt>
-    <a name = "simple_protection:chest"></a>
-    <strong>simple_protection:chest</strong>
+    <a name = "default"></a>
+    <strong>default</strong>
     </dt>
     <dd>
-    A sharable protected chest. </p>
+    Base mod for many games.
+ Included in <a href="https://github.com/minetest/minetest_game/tree/master/mods/default">minetest_game</a>.
 
-<p> A shared chest for <i><strong>simple_protection</strong></i> but works with other protection mods too.
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "intllib"></a>
+    <strong>intllib (<i>optional</i>)</strong>
+    </dt>
+    <dd>
+    Internationalization library. </p>
+
+<p> Provides internationalization support for mods.
 
     </ul>
     </ul>
     </ul>
-    <h3>Craft Recipes:</h3>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Forum URL:</h3>
     <ul>
-         <li><b>Type:</b> shapeless<br><b>Count:</b> 1<br><b>Recipe:</b><br><blockquote> 		simple_protection:claim, default:chest_locked</blockquote></li>
-         <li><b>Type:</b> shapeless<br><b>Count:</b> 1<br><b>Recipe:</b><br><blockquote> 		simple_protection:claim, default:chest</blockquote></li>
+         <a href="https://forum.minetest.net/viewtopic.php?t=4929">https://forum.minetest.net/viewtopic.php?t=4929</a>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "areas"></a>
+    <strong>areas (<i>optional</i>)</strong>
+    </dt>
+    <dd>
+    Advanced area protection. </p>
+
+<p> Areas is a advanced area protection mod based on node_ownership.
+
     </ul>
     </ul>
     </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Forum URL:</h3>
+    <ul>
+         <a href="https://forum.minetest.net/viewtopic.php?t=7239">https://forum.minetest.net/viewtopic.php?t=7239</a>
     </ul>
 
 
