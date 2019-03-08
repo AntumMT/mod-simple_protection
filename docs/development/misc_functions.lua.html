@@ -38,14 +38,23 @@
 </ul>
 
 
-<h2>Categories</h2>
+<h2>Development</h2>
 <ul class="nowrap">
-  <li><a href="../categories/chat_commands.html">chat_commands</a></li>
-  <li><strong>functions</strong></li>
-  <li><a href="../categories/items.html">items</a></li>
-  <li><a href="../categories/nodes.html">nodes</a></li>
-  <li><a href="../categories/privileges.html">privileges</a></li>
-  <li><a href="../categories/settings.html">settings</a></li>
+  <li><a href="../development/command_mgr.lua.html">command_mgr.lua</a></li>
+  <li><a href="../development/database_lsqlite.lua.html">database_lsqlite.lua</a></li>
+  <li><a href="../development/database_raw.lua.html">database_raw.lua</a></li>
+  <li><a href="../development/default_settings.lua.html">default_settings.lua</a></li>
+  <li><a href="../development/hud.lua.html">hud.lua</a></li>
+  <li><a href="../development/init.lua.html">init.lua</a></li>
+  <li><strong>misc_functions.lua</strong></li>
+  <li><a href="../development/protection.lua.html">protection.lua</a></li>
+</ul>
+<h2>Client</h2>
+<ul class="nowrap">
+  <li><a href="../client/chat_commands.html">chat_commands</a></li>
+  <li><a href="../client/items.html">items</a></li>
+  <li><a href="../client/nodes.html">nodes</a></li>
+  <li><a href="../client/privileges.html">privileges</a></li>
 </ul>
 <h2>Topics</h2>
 <ul class="">
@@ -56,8 +65,10 @@
 
 <div id="content">
 
-<h1>Category <code>functions</code></h1>
-<p>Functions</p>
+<h1>Dev <code>misc_functions.lua</code></h1>
+<p>
+
+</p>
 <p>
 
 </p>
@@ -66,29 +77,21 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#table_contains">table_contains (t, e)</a></td>
-	<td class="summary">Checks table for an item.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#table_erase">table_erase (t, e)</a></td>
-	<td class="summary">Removes an item from table.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#s_protect.can_access">s_protect.can_access (pos, player_name)</a></td>
+	<td class="name" ><a href="#s_protect.can_access">s_protect.can_access (<i>pos</i>, <i>player_name</i>)</a></td>
 	<td class="summary">Allows authorized users &amp; mods to modify an area.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#s_protect.get_location">s_protect.get_location (pos_)</a></td>
+	<td class="name" ><a href="#s_protect.get_location">s_protect.get_location (<i>pos_</i>)</a></td>
 	<td class="summary">
 
 </td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#s_protect.get_area_bounds">s_protect.get_area_bounds (pos_)</a></td>
+	<td class="name" ><a href="#s_protect.get_area_bounds">s_protect.get_area_bounds (<i>pos_</i>)</a></td>
 	<td class="summary">Retrieves protected area boundaries.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#s_protect.get_center">s_protect.get_center (pos1)</a></td>
+	<td class="name" ><a href="#s_protect.get_center">s_protect.get_center (<i>pos1</i>)</a></td>
 	<td class="summary">Retrieves center coordinates of protected area.</td>
 	</tr>
 	<tr>
@@ -105,66 +108,8 @@
 
     <dl class="function">
     <dt>
-    <a name = "table_contains"></a>
-    <strong>table_contains (t, e)</strong>
-    </dt>
-    <dd>
-    Checks table for an item.
-
-    </ul>
-    </ul>
-    </ul>
-    </ul>
-    </ul>
-    </ul>
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">t</span>
-         Table definition
-        </li>
-        <li><span class="parameter">e</span>
-         Item to check for
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "table_erase"></a>
-    <strong>table_erase (t, e)</strong>
-    </dt>
-    <dd>
-    Removes an item from table.
-
-    </ul>
-    </ul>
-    </ul>
-    </ul>
-    </ul>
-    </ul>
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">t</span>
-         Table definition
-        </li>
-        <li><span class="parameter">e</span>
-         Item to be removed
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
     <a name = "s_protect.can_access"></a>
-    <strong>s_protect.can_access (pos, player_name)</strong>
+    <strong>s_protect.can_access (<i>pos</i>, <i>player_name</i>)</strong>
     </dt>
     <dd>
     Allows authorized users &amp; mods to modify an area.
@@ -174,14 +119,14 @@
     </ul>
     </ul>
     </ul>
-    </ul>
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">pos</span>
+          <li><span class="parameter">pos</span>
          Coordinates of node to check access rights
         </li>
-        <li><span class="parameter">player_name</span>
+          <li><span class="parameter">player_name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          Player to check for access rights
         </li>
     </ul>
@@ -193,7 +138,7 @@
 </dd>
     <dt>
     <a name = "s_protect.get_location"></a>
-    <strong>s_protect.get_location (pos_)</strong>
+    <strong>s_protect.get_location (<i>pos_</i>)</strong>
     </dt>
     <dd>
 
@@ -205,11 +150,10 @@
     </ul>
     </ul>
     </ul>
-    </ul>
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">pos_</span>
+          <li><span class="parameter">pos_</span>
          (description)
         </li>
     </ul>
@@ -221,7 +165,7 @@
 </dd>
     <dt>
     <a name = "s_protect.get_area_bounds"></a>
-    <strong>s_protect.get_area_bounds (pos_)</strong>
+    <strong>s_protect.get_area_bounds (<i>pos_</i>)</strong>
     </dt>
     <dd>
     Retrieves protected area boundaries.
@@ -231,11 +175,10 @@
     </ul>
     </ul>
     </ul>
-    </ul>
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">pos_</span>
+          <li><span class="parameter">pos_</span>
          Coordinates from which to identify protected area
         </li>
     </ul>
@@ -247,7 +190,7 @@
 </dd>
     <dt>
     <a name = "s_protect.get_center"></a>
-    <strong>s_protect.get_center (pos1)</strong>
+    <strong>s_protect.get_center (<i>pos1</i>)</strong>
     </dt>
     <dd>
     Retrieves center coordinates of protected area.
@@ -257,11 +200,10 @@
     </ul>
     </ul>
     </ul>
-    </ul>
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">pos1</span>
+          <li><span class="parameter">pos1</span>
          Coordinates from which to identify protected area
         </li>
     </ul>
@@ -283,7 +225,6 @@
     </ul>
     </ul>
     </ul>
-    </ul>
 
 
 
@@ -298,7 +239,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/AntumDeluge/LDoc/tree/antum">LDoc 1.4.6-antum-dev-2</a></i>
-<i style="float:right;">Last updated 2019-03-07 16:48:24 </i>
+<i style="float:right;">Last updated 2019-03-07 21:29:52 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
