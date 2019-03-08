@@ -130,6 +130,28 @@ local function chatcmd_handler(item)
 	return output
 end
 
+--- Handles depends type.
+--
+-- @function depends_handler
+local function depends_handler(item)
+	local output = item.name
+	local opt = item:default_of_param(item)
+
+	if item.tags.opt then
+		output = output .. ' (<i>optional</i>)'
+	end
+
+	-- FIXME: added twice
+	--[[
+	if item.tags.forum then
+		local url = 'https://forum.minetest.net/viewtopic.php?t=' .. item.tags.forum[1]
+		item.description = item.description .. '\n<a href="' .. url .. '">Forum</a>'
+	end
+	]]
+
+	return output
+end
+
 --- Main handler for custom types.
 --
 -- @function custom_display_name_handler
@@ -139,6 +161,8 @@ end
 function custom_display_name_handler(item, default_handler)
 	if item.type == 'chatcmd' then
 		return chatcmd_handler(item)
+	elseif item.type == 'depends' then
+		return depends_handler(item)
 	end
 
 	return default_handler(item)
@@ -158,6 +182,7 @@ new_type('setting', 'Settings', false)
 new_type('item', 'Items', false)
 new_type('priv', 'Privileges', false)
 new_type('node', 'Nodes', false)
+new_type('depends', 'Dependencies', false)
 
 
 --- Tags
@@ -188,5 +213,15 @@ custom_tags = {
 	{'default',
 		title = 'Default Value',
 		format = to_italic,
+	},
+	{'opt',
+		hidden = true,
+	},
+	{'forum',
+		title = 'Forum URL',
+		format = function(value)
+			local url = 'https://forum.minetest.net/viewtopic.php?t=' .. value
+			return '<a href="' .. url .. '">' .. url .. '</a>'
+		end,
 	},
 }
