@@ -1,0 +1,21 @@
+
+---
+--
+-- @dev init.lua
+
+
+--- Main global table object.
+--
+-- @table s_protect
+-- @tparam table share
+-- @tparam string mod_path Directory path of mod.
+-- @tparam string conf Location of config file relative to world path.
+-- @tparam string file Location of data file relative to world path.
+-- @tparam string sharefile Location of shared data file relative to world path.
+
+--- Intllib support.
+--
+-- @function s_protect.gettext
+-- @param rawtext
+-- @param replacements
+-- @param ...

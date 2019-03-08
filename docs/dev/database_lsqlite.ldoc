@@ -1,0 +1,38 @@
+
+---
+--
+-- @dev database_lsqlite.lua
+
+
+---
+--
+-- @function s_protect.load_db
+
+---
+--
+-- @function s_protect.load_shareall
+
+---
+--
+-- @function s_protect.save_share_db
+
+---
+--
+-- @function s_protect.set_claim
+-- @param cpos
+-- @param claim
+
+---
+--
+-- @function s_protect.get_claim
+-- @param cpos
+
+---
+--
+-- @function s_protect.get_player_claims
+-- @param owner
+
+---
+--
+-- @function s_protect.update_claims
+-- @param updated

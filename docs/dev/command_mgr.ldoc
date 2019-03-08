@@ -1,0 +1,29 @@
+
+---
+--
+-- @dev command_mgr.lua
+
+
+--- Registered commands.
+--
+-- @local
+-- @table commands
+
+---
+--
+-- @function s_protect.register_subcommand
+-- @param name
+-- @param func
+
+---
+--
+-- @local
+-- @function check_ownership
+-- @param name
+
+--- Removes an item from table.
+--
+-- @local
+-- @function table_erase
+-- @param t Table definition
+-- @param e Item to be removed

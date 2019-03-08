@@ -1,0 +1,22 @@
+
+---
+--
+-- @dev protection.lua
+
+
+--- Overridden method.
+--
+-- Original method stored in: `s_protect.old_is_protected`
+--
+-- @function minetest.is_protected
+-- @param pos
+-- @param player_name
+
+--- Overridden method.
+--
+-- Original method stored in: `local old_item_place`
+--
+-- @function minetest.item_place
+-- @param itemstack
+-- @param placer
+-- @param pointed_thing

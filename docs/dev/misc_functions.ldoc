@@ -1,0 +1,30 @@
+
+---
+--
+-- @dev misc_functions.lua
+
+
+--- Allows authorized users & mods to modify an area.
+--
+-- @function s_protect.can_access
+-- @param pos Coordinates of node to check access rights
+-- @tparam string player_name Player to check for access rights
+
+---
+--
+-- @function s_protect.get_location
+-- @param pos_ (description)
+
+--- Retrieves protected area boundaries.
+--
+-- @function s_protect.get_area_bounds
+-- @param pos_ Coordinates from which to identify protected area
+
+--- Retrieves center coordinates of protected area.
+--
+-- @function s_protect.get_center
+-- @param pos1 Coordinates from which to identify protected area
+
+--- Loads configurations from file.
+--
+-- @function s_protect.load_config
