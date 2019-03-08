@@ -1,7 +1,7 @@
 
 --- Registered Privileges
 --
--- @category privileges
+-- @client privileges
 
 
 --- Allows to modify and delete protected areas.

@@ -1,7 +1,7 @@
 
 --- Chat Commands
 --
--- @category chat_commands
+-- @client chat_commands
 
 
 --- Area command.

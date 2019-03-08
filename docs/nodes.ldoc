@@ -1,7 +1,7 @@
 
 --- Nodes
 --
--- @category nodes
+-- @client nodes
 
 
 --- A sharable protected chest.

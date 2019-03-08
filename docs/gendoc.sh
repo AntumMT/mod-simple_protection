@@ -22,7 +22,7 @@ cd "${ROOT}"
 
 # Clean old files
 echo -e "\nCleaning old files ..."
-rm -rf "${TARGET}.html" "${DOCS}/categories" "${DOCS}/development" "${DOCS}/scripts" "${DOCS}/source" "${DOCS}/modules" "${DOCS}/topics" "${DOCS}/ldoc*.css" "${DOCS}/data"
+rm -rf "${TARGET}.html" "${DOCS}/client" "${DOCS}/development" "${DOCS}/scripts" "${DOCS}/source" "${DOCS}/modules" "${DOCS}/topics" "${DOCS}/ldoc*.css" "${DOCS}/data"
 
 if [ "${PARAM}" != "clean" ]; then
 	# Create new files
