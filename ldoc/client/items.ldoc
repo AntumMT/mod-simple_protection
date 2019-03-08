@@ -14,3 +14,5 @@
 -- 		{"default:copper_ingot", "default:steel_ingot", "default:copper_ingot"},
 --		{"default:steel_ingot", "default:stonebrick", "default:steel_ingot"},
 --		{"default:copper_ingot", "default:steel_ingot", "default:copper_ingot"},
+-- @aka simple_protection:claim_stick
+-- @aka claim_stick
