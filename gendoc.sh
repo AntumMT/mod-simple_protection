@@ -13,16 +13,16 @@ if [ "${PARAM}" == "help" ]; then
 	exit 0
 fi
 
-DOCS="$(dirname $(readlink -f $0))"
-ROOT="$(dirname ${DOCS})"
-CONFIG="${DOCS}/config.ld"
+ROOT="$(dirname $(readlink -f $0))"
+DOCS="${ROOT}/docs"
+CONFIG="${ROOT}/config.ld"
 TARGET="${DOCS}/api"
 
 cd "${ROOT}"
 
 # Clean old files
 echo -e "\nCleaning old files ..."
-rm -rf "${TARGET}.html" "${DOCS}/client" "${DOCS}/development" "${DOCS}/scripts" "${DOCS}/source" "${DOCS}/modules" "${DOCS}/topics" "${DOCS}/ldoc*.css" "${DOCS}/data"
+rm -rf "${DOCS}"
 
 if [ "${PARAM}" != "clean" ]; then
 	# Create new files
