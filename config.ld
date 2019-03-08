@@ -224,4 +224,10 @@ custom_tags = {
 			return '<a href="' .. url .. '">' .. url .. '</a>'
 		end,
 	},
+	{'aka',
+		title = 'Aliases',
+		format = function(value)
+			return value
+		end,
+	},
 }
