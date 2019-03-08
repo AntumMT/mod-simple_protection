@@ -1,0 +1,16 @@
+
+--- Items
+--
+-- @category items
+
+
+--- Claim Stick.
+--
+-- Claim Stick item definition.
+--
+-- @item simple_protection:claim
+-- @img simple_protection_claim
+-- @recipe 1,shapeless
+-- 		{"default:copper_ingot", "default:steel_ingot", "default:copper_ingot"},
+--		{"default:steel_ingot", "default:stonebrick", "default:steel_ingot"},
+--		{"default:copper_ingot", "default:steel_ingot", "default:copper_ingot"},

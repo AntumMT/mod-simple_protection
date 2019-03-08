@@ -1,0 +1,14 @@
+
+--- Chat Commands
+--
+-- @category chat_commands
+
+
+--- Area command
+--
+-- @chatcmd	area &lt;command&gt; [&lt;args&gt; ...]
+-- @cparam param Can be one of the following:
+--   "show",
+--   "radar",
+--   "(un)share &lt;name&gt;",
+--   "(un)shareall &lt;name&gt;"

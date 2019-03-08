@@ -1,0 +1,15 @@
+
+--- Nodes
+--
+-- @category nodes
+
+
+--- A sharable protected chest.
+--
+-- A shared chest for <i>**simple_protection**</i> but works with other protection mods too.
+--
+-- @node simple_protection:chest
+-- @recipe 1,shapeless
+-- 		{"simple_protection:claim", "default:chest_locked"}
+-- @recipe 1,shapeless
+-- 		{"simple_protection:claim", "default:chest"}
