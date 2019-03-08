@@ -162,6 +162,7 @@ end
 
 
 -- Custom types
+new_type('category', 'Categories', true)
 new_type('chatcmd', 'Chat Commands', false, 'param')
 new_type('setting', 'Settings', false)
 new_type('item', 'Items', false)

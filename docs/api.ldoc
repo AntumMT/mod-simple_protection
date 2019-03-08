@@ -1,7 +1,7 @@
 
 --- Functions
 --
--- @file functions
+-- @category functions
 
 
 --- Function to get item count.
@@ -53,7 +53,7 @@
 
 --- Nodes
 --
--- @file nodes
+-- @category nodes
 
 
 --- A sharable protected chest.
@@ -69,7 +69,7 @@
 
 --- Chat Commands
 --
--- @file chat_commands
+-- @category chat_commands
 
 
 --- Area command
@@ -84,7 +84,7 @@
 
 --- Settings
 --
--- @file settings
+-- @category settings
 
 
 --- Width and length of claims in nodes.
@@ -151,7 +151,7 @@
 
 --- Items
 --
--- @file items
+-- @category items
 
 
 --- Claim Stick.

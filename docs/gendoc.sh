@@ -29,21 +29,19 @@ if [ "${PARAM}" != "clean" ]; then
 	echo -e "\nGenerating new documentation ..."
 	ldoc -c "${CONFIG}"
 
+	RET=$?
+
+	if [ "${RET}" -ne "0" ]; then
+		echo -e "\nAn error occurred! Could not generate HTML documentation."
+		exit ${RET}
+	fi
+
 	echo -e "\nMaking some final adjustments ..."
 
 	if [ -f "${TARGET}.html" ]; then
 		# Put "prefix:name_" settings in angled brackets (<>)
 		sed -i -e 's|>prefix:name|>\&lt;prefix\&gt;:\&lt;name\&gt;|' "${TARGET}.html"
 	fi
-
-	# Rename section "Source" to "Category"
-	for F in $(find "${DOCS}" -type f -name "*.html"); do
-		sed -i -e 's|<h2>Source</h2>|<h2>Category</h2>|' "${F}"
-	done
-
-	for F in $(find "${DOCS}/source" -type f -name "*.html"); do
-		sed -i -e 's|<h1>File |<h1>Category |' "${F}"
-	done
 fi
 
 echo -e "Done!"
