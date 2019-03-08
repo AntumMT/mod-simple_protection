@@ -13,7 +13,7 @@ readme = 'README.md'
 dir = 'docs'
 icon = 'icon.png'
 file = {
-	dir .. '/api.ldoc',
+	dir,
 }
 
 
