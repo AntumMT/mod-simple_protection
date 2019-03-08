@@ -38,20 +38,6 @@ function table.len(t)
 end
 
 
---- Handles "cparam" tag.
-local function cparam_handler(value)
-	value = string.split(value, ' ')
-	local p = '<b>' .. value[1]:gsub("^%s*(.-)%s*$", "%1") .. '</b>'
-	table.remove(value, 1)
-
-	if table.len(value) then
-		local d = table.concat(value, ' ')
-		p = p .. ': ' .. d
-	end
-
-	return p
-end
-
 --- Handles "recipe" tag.
 local function recipe_handler(value)
 	local s = string.split(value, '\n')
@@ -118,25 +104,28 @@ end
 -- @param item
 local function chatcmd_handler(item)
 	local output = item.name
-	if item.tags.cparam ~= nil then
-		for i, p in ipairs(item.tags.cparam) do
-			p = string.split(p, ' ')[1]:gsub("^%s*(.-)%s*$", "%1")
-			local left = ' ['
-			local right = ']'
-			if item.tags.rcparam ~= nil then
-				left = ' &lt;'
-				right = '&gt;'
+	for _, P in ipairs(item.params) do
+		local param = P
+		local opt = item:default_of_param(P)
+		local sub_params = item:subparam(P)
+		if #sub_params > 0 and sub_params[1] ~= param then
+			param = param .. ' ('
+			for idx = 1, #sub_params, 1 do
+				local subp = string.split(sub_params[idx], '.')[2]
+				if idx == 1 then
+					param = param .. subp
+				else
+					param = param .. ', ' .. subp
+				end
 			end
-			output = output .. left .. p .. right
+			param = param .. ')'
+		end
+		if opt then
+			output = output .. ' [' .. param .. ']'
+		else
+			output = output .. ' &lt;' .. param .. '&gt;'
 		end
 	end
-	--[[
-	if item.tags.rcparam ~= nil then
-		for i, p in ipairs(item.tags.rcparam) do
-			output = output .. ' &lt;' .. p .. '&gt;'
-		end
-	end
-	]]
 
 	return output
 end
@@ -177,11 +166,6 @@ new_type('node', 'Nodes', false)
 
 -- Custom tags
 custom_tags = {
-	-- Optional chat command parameter
-	{'cparam',
-		title = 'Parameters',
-		format = cparam_handler,
-	},
 	-- Settings type
 	{'settype',
 		title = 'Type',
@@ -205,11 +189,3 @@ custom_tags = {
 		format = to_italic,
 	},
 }
-
-
---- Aliases
---
--- @section aliases
-
-
-alias('rcparam', 'cparam')
