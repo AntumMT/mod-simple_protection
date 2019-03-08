@@ -1,0 +1,26 @@
+
+--- Simple Protection requires to following mods to work correctly.
+--
+-- @dev dependencies
+
+
+--- Base mod for many games.
+-- Included in [minetest_game](https://github.com/minetest/minetest_game/tree/master/mods/default).
+--
+-- @depends default
+
+--- Internationalization library.
+--
+-- Provides internationalization support for mods.
+--
+-- @depends intllib
+-- @opt
+-- @forum 4929
+
+--- Advanced area protection.
+--
+-- Areas is a advanced area protection mod based on node_ownership.
+--
+-- @depends areas
+-- @opt
+-- @forum 7239
