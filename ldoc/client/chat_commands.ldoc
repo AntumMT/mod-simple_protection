@@ -4,12 +4,15 @@
 -- @client chat_commands
 
 
---- Area command.
+--- Command for managing areas.
 --
 -- @chatcmd area
 -- @param[opt] command Can be one of the following:
 --
--- - show
--- - radar
--- - (un)share &lt;name&gt;
--- - (un)shareall &lt;name&gt;
+-- - **show:** Provides information about the current area
+-- - **radar:** Displays a minimap-like area overview
+-- - **(un)share &lt;name&gt;:** Shares/Unshares the current area with &lt;name&gt;
+-- - **(un)shareall &lt;name&gt;:** Shares/Unshared all your areas with &lt;name&gt;
+-- - **list [&lt;name&gt;]:** Lists all areas (optional &lt;name&gt;)
+-- - **unclaim:** Unclaims the current area
+-- - **delete &lt;name&gt;:** Removes all areas of &lt;name&gt; (requires "server" privilege)
