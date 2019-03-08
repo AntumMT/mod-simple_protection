@@ -1,7 +1,7 @@
 
 --- Settings
 --
--- @category settings
+-- @dev default_settings.lua
 
 
 --- Width and length of claims in nodes.
