@@ -1,0 +1,9 @@
+
+--- Registered Privileges
+--
+-- @category privileges
+
+
+--- Allows to modify and delete protected areas.
+--
+-- @priv simple_protection
