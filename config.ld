@@ -9,7 +9,10 @@ not_luadoc = true
 style = '!fixed'
 wrap = true
 output = 'api'
-readme = 'README.md'
+topics = {
+	'README.md',
+	'ldoc/links.md',
+}
 dir = 'docs'
 icon = 'icon.png'
 file = {
