@@ -42,7 +42,11 @@ end
 
 
 local item_urls = {}
-local item_img_urls = {}
+local item_img_urls = {
+	{'default:copper_ingot', 'https://raw.githubusercontent.com/minetest/minetest_game/master/mods/default/textures/default_copper_ingot.png'},
+	{'default:steel_ingot', 'https://raw.githubusercontent.com/minetest/minetest_game/master/mods/default/textures/default_steel_ingot.png'},
+	{'default:stonebrick', 'https://raw.githubusercontent.com/minetest/minetest_game/master/mods/default/textures/default_stone_brick.png'},
+}
 
 --- Handles "recipe" tag.
 local function recipe_handler(value)
