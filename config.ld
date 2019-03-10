@@ -41,6 +41,9 @@ function table.len(t)
 end
 
 
+local item_urls = {}
+local item_img_urls = {}
+
 --- Handles "recipe" tag.
 local function recipe_handler(value)
 	local s = string.split(value, '\n')
@@ -67,13 +70,54 @@ local function recipe_handler(value)
 				output = '<b>Type:</b> ' .. ctype .. '<br>' .. output
 			end
 
-			output = output .. '<br><b>Recipe:</b><br><blockquote>'
+			output = output .. '<br><b>Recipe:</b><br>\n<blockquote>'
 
+			local lines = {}
+			local t = '\n<table>'
 			for _, i in pairs(ingredients) do
-				output = output .. string.gsub(i, '[{}"]', '')
+				i = string.gsub(string.gsub(i, '[%s+{}"]', ''), '[,]+%f[\r\n%z]', '')
+				table.insert(lines, string.split(i, ','))
 			end
 
-			output = output .. '</blockquote>'
+			for _, LINE in pairs(lines) do
+				t = t .. '\n  <tr>'
+				if type(LINE) == 'table' then
+					for _, ITEM in pairs(LINE) do
+						local url = nil
+						local img_url = nil
+						for _, U in pairs(item_urls) do
+							if ITEM == U[1] and #U > 1 then
+								url = U[2]
+								break
+							end
+						end
+						for _, U in pairs(item_img_urls) do
+							if ITEM == U[1] and #U > 1 then
+								img_url = U[2]
+								break
+							end
+						end
+
+						if url then
+							t = t .. '\n    <td style="border:1px solid black; padding:5px; text-align:center;">\n      <a href="' .. url .. '">' .. ITEM .. '</a>'
+						else
+							t = t .. '\n    <td style="border:1px solid black; padding:5px; text-align:center;">\n      ' .. ITEM
+						end
+
+						-- add image
+						if img_url then
+							t = t .. ' <img src="' .. img_url .. '" height="16" width="16" style="vertical-align:middle;" />'
+						end
+
+						t = t .. '\n    </td>'
+					end
+				end
+				t = t .. '\n  </tr>'
+			end
+
+			t = t .. '\n</table>\n'
+
+			output = output .. t .. '</blockquote>'
 		end
 	end
 
